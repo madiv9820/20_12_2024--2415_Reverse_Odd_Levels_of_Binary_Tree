@@ -19,7 +19,7 @@ private:
         while(index < n) {
             TreeNode* node = q.front(); q.pop();
             node->left = arr[index]; ++index;
-            q.push(node->left;)
+            q.push(node->left);
             if(index < n) { node->right = arr[index]; ++index; q.push(node->right); } 
         }
 
