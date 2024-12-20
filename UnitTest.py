@@ -2,6 +2,13 @@ from Solution import Solution
 import unittest
 from timeout_decorator import timeout
 
+class TreeNode:
+    def __init__(self, val = 0, left = None, right = 0):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
 class UnitTest(unittest.TestCase):
     def setUp(self):
         self.__testcases = {1: ([2,3,5,8,13,21,34], [2,5,3,8,13,21,34]),
@@ -55,18 +62,18 @@ class UnitTest(unittest.TestCase):
     @timeout(0.5)
     def test_case_2(self):
         input, output = self.__testcases[2]
-        input = self.__create_Tree(input)
+        input = self.__createTree(input)
         result = self.__obj.reverseOddLevels(input)
-        result = self.__create_List(result)
+        result = self.__createList(result)
 
         self.assertTrue(all(r == o for r, o in zip(result, output)))
 
     @timeout(0.5)
     def test_case_3(self):
         input, output = self.__testcases[3]
-        input = self.__create_Tree(input)
+        input = self.__createTree(input)
         result = self.__obj.reverseOddLevels(input)
-        result = self.__create_List(result)
+        result = self.__createList(result)
 
         self.assertTrue(all(r == o for r, o in zip(result, output)))
 

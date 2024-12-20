@@ -1,7 +1,5 @@
 #include "Solution.hpp"
-#include <vector>
-#include <queue>
-using namespace std;
+#include <iostream>
 
 struct testcase {
     vector<int> input, output;
@@ -18,9 +16,9 @@ private:
 
         while(index < n) {
             TreeNode* node = q.front(); q.pop();
-            node->left = arr[index]; ++index;
+            node->left = new TreeNode(arr[index++]);
             q.push(node->left);
-            if(index < n) { node->right = arr[index]; ++index; q.push(node->right); } 
+            if(index < n) { node->right = new TreeNode(arr[index++]); q.push(node->right); } 
         }
 
         return root;
@@ -63,3 +61,8 @@ public:
         }
     }
 };
+
+int main() {
+    UnitTest test;
+    test.test();
+}
