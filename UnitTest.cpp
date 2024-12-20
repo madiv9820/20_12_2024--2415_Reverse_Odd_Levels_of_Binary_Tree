@@ -57,7 +57,7 @@ public:
             for(int index = 0; index < result.size(); ++index)
                 if(output[index] != result[index]) { matched = false; break; }
 
-            cout << "TestCase " << index+1 << ": " << ((matched)?"true":"false") << endl;
+            cout << "TestCase " << index+1 << ": " << ((matched)?"passed":"failed") << endl;
         }
     }
 };
